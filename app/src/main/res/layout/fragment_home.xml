@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.homefragment.HomeFragment">
+
+    <data>
+        <variable
+            name="homeFragment"
+            type="com.example.trainingapp.fragments.homefragment.HomeFragment" />
+        <variable
+            name="viewModel"
+            type="com.example.trainingapp.data.models.TrainingViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/homeList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            android:paddingHorizontal="16dp"
+            app:listSessions="@{viewModel.sessions}"
+            app:spanCount="1"
+            tools:itemCount="6"
+            tools:listitem="@layout/home_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
